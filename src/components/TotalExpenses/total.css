@@ -1,0 +1,88 @@
+.main-total {
+  width: fit-content;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 30px;
+  right: 25px;
+  background-color: rgb(31, 31, 31);
+  border-radius: 12px;
+  color: white;
+  font-size: 30px;
+  padding: 20px;
+  width: fit-content;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  transition: 0.8s;
+  -webkit-transition: 0.8s;
+  -moz-transition: 0.8s;
+  -ms-transition: 0.8s;
+  -o-transition: 0.8s;
+}
+.main-total:has([type="checkbox"]:checked) {
+  transform: translateX(0);
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  -o-transform: translateX(0);
+}
+.main-total span {
+  background-color: white;
+  color: black;
+  padding: 5px 10px;
+  margin-left: 5px;
+  border-radius: 9px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  -ms-border-radius: 9px;
+  -o-border-radius: 9px;
+}
+.main-total [type="checkbox"] {
+  appearance: none;
+}
+.main-total [type="checkbox"] + label {
+  width: 30px;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  box-sizing: border-box;
+  font-size: 20px;
+  align-items: center;
+  background-color: rgb(31, 31, 31);
+  box-shadow: 0 0 5px black;
+  border-bottom-left-radius: 50%;
+  border-top-left-radius: 50%;
+  position: absolute;
+  left: -30px;
+  top: 10%;
+}
+.main-total [type="checkbox"]:checked + label::before {
+  content: ">";
+  position: relative;
+  animation: swipe 1s linear infinite;
+  -webkit-animation: swipe 0.5s linear infinite alternate;
+}
+.main-total [type="checkbox"] + label::before {
+  content: "<";
+
+  -webkit-animation: swipe 0.5s linear infinite alternate-reverse;
+}
+.main-total:has([type="checkbox"]) {
+  transform: translateX(calc(100% + 30px));
+  -webkit-transform: translateX(calc(100% + 30px));
+  -moz-transform: translateX(calc(100% + 30px));
+  -ms-transform: translateX(calc(100% + 30px));
+  -o-transform: translateX(calc(100% + 30px));
+}
+@keyframes swipe {
+  from {
+    margin-right: 0;
+  }
+  to {
+    margin-right: 10px;
+  }
+}
